@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\BCP_BACKEND_JJCQ\BCP_BACKEND_JJCQ\BCP_BACKEND_JJCQ\Models\Cuenta.cs" Link="Models\Cuenta.cs" />
+    <Compile Include="..\..\..\BCP_BACKEND_JJCQ\BCP_BACKEND_JJCQ\BCP_BACKEND_JJCQ\Models\Moneda.cs" Link="Models\Moneda.cs" />
+    <Compile Include="..\..\..\BCP_BACKEND_JJCQ\BCP_BACKEND_JJCQ\BCP_BACKEND_JJCQ\Models\Movimiento.cs" Link="Models\Movimiento.cs" />
+    <Compile Include="..\..\..\BCP_BACKEND_JJCQ\BCP_BACKEND_JJCQ\BCP_BACKEND_JJCQ\Models\Tipo_Cambio.cs" Link="Models\Tipo_Cambio.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>

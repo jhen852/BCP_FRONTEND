@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<div class="container mt-3">
+  <div class="row justify-content-md-center">
+    <div class="col-md-4 mb-3">
+      <h3 class="text-center">CREAR CUENTA</h3>
+      <form method="POST" action="action.php" enctype="multipart/form-data">
+        <input type="text" name="metodo" value="1" hidden>
+      <div class="mb-3">
+          <label class="form-label">TITULAR</label>
+          <input type="text" class="form-control" name="namefull" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">NUMERO DE CUENTA</label>
+          <input type="number" name="cedula" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="Sexo">MONEDA</label>
+          <select class="form-select" name="section" id="section" required>
+            <option value="">Asigne una moneda</option>
+            <option value="A">BOLIVIANOS</option>
+            <option value="B">DOLARES</option>
+            <option value="C">C</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="Sexo">TIPO DE CUENTA</label>
+          <select class="form-select" name="section" id="section" required>
+            <option value="">Asigne tipo de cuenta</option>
+            <option value="A">CUENTA DE CORRIENTE</option>
+            <option value="B">CUENTA DE AHORRO</option>
+          </select>
+        </div>
+        <div class="d-grid gap-2 col-12 mx-auto">
+          <button type="submit" class="btn  btn btn-primary mt-3 mb-2">
+            REGISTRAR CUENTA
+            <i class="bi bi-arrow-right-circle"></i>
+          </button>
+        </div>
+        
+      </form>
+    </div>
+      <div class="col-md-8">
+    <h3 class="text-center">LISTA DE CUENTAS</h3>
+      <div class="row">
+        <div class="col-md-12 p-2">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Moneda</th>
+                  <th scope="col">Cuenta</th>
+                  <th scope="col">Titular</th>
+                  <th scope="col">Saldo</th>
+                  <th scope="col">Mov</th>
+                </tr>
+              </thead>
+              <tbody>
+                   @foreach(var Cuenta in Model){
+                <tr>
+                    <td></td>
+                       <td>@Cuenta.tipo</td>
+                        <td>@Cuenta.moneda</td>
+                        <td>@Cuenta.nro_cuenta</td>
+                        <td>@Cuenta.nombre</td>
+                        <td>@Cuenta.saldo</td>
+                  <td>
+                  <a href="" class="btn btn-warning mb-2"   title="Ver datos del alumno <?php echo $dataAlumno['namefull']; ?>">
+                  <i class="bi bi-tv"></i>Movimiento</a>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </div>
+        </div>
+      </div>
+      </div>

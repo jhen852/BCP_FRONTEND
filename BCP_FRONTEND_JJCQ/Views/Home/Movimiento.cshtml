@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Movimiento";
+}
+<div class="container mt-5">
+  <div class="row justify-content-md-center">
+    <div class="col-md-4 mb-3">
+      <h3 class="text-center">ABONOS / RETIROS</h3>
+      <form asp-action="GuardarCambios" asp-controller="" method="post">
+        <input type="text" name="metodo" value="1" hidden>
+       <div class="mb-3">
+          <label for="Sexo">CUENTA</label>
+          <select class="form-select" name="section" id="section" required>
+              <option value="">Asigne tipo de cuenta</option>
+          @foreach (var item in Model)
+           {     
+            
+            <option value="">@item.nro_cuenta</option>
+          }
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">MONTO</label>
+          <input type="monto" name="monto" class="form-control" required>
+        </div>
+        <div class="form-check">
+    <input class="form-check-input" type="radio" name="ABONO" id="A" value="A" checked>
+    <label class="form-check-label" for="exampleRadios1">
+      ABONO
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="RETIRO" id="R" value="R">
+    <label class="form-check-label" for="exampleRadios2">
+      RETIRO
+    </label>
+  </div>
+        <br>
+        <div class="d-grid gap-2 col-12 mx-auto">
+          <button type="submit" class="btn  btn btn-primary mt-3 mb-2">
+            TRANSACCION
+            <i class="bi bi-arrow-right-circle"></i>
+          </button>
+          <button type="submit" class="btn  btn btn-danger ">
+            CANCELAR
+            <i class="bi bi-arrow-right-circle"></i>
+          </button>
+        </div>
+        
+      </form>
+    </div>
+      <div class="col-md-8">
+    <h3 class="text-center">TRANSFERENCIA ENTRE CUENTAS</h3>
+      <div class="row">
+        <div class="col-md-12 p-2">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Moneda</th>
+                  <th scope="col">Cuenta</th>
+                  <th scope="col">Titular</th>
+                  <th scope="col">Saldo</th>
+                  <th scope="col">Mov</th>
+                </tr>
+              </thead>
+              <tbody>
+                   @foreach(var Cuenta in Model){
+                <tr>
+                    <td></td>
+                       <td>@Cuenta.tipo</td>
+                        <td>@Cuenta.moneda</td>
+                        <td>@Cuenta.nro_cuenta</td>
+                        <td>@Cuenta.nombre</td>
+                        <td>@Cuenta.saldo</td>
+                  <td>
+                  <a href="" class="btn btn-warning mb-2"   title="Ver datos del alumno <?php echo $dataAlumno['namefull']; ?>">
+                  <i class="bi bi-tv"></i>Movimiento</a>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </div>
+        </div>
+      </div>
+      </div>
